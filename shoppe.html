@@ -1,0 +1,67 @@
+<html>
+<head>
+  <title>Shopee</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+  <style>
+    .thumb img {
+      width:150px;
+    }
+    .mainImg {
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <table>
+      <tr v-for="(value, key) in images">
+        <td colspan="3">
+          <span>value: {{value}}</span>  
+          <img class="mainImg" v-if="" :src="key"/>
+        </td>
+      </tr>
+      <tr class="thumb">
+        <td><img src="https://images.pexels.com/photos/1294886/pexels-photo-1294886.jpeg"/></td>
+        <td><img src="https://images.pexels.com/photos/1366998/pexels-photo-1366998.jpeg"/></td>
+        <td><img src="https://images.pexels.com/photos/3510/hand-apple-iphone-smartphone.jpg"/></td>
+      </tr>
+    </table>
+    <br/><br/>
+    <input v-model="selectedRadio" value="0" type="radio" name="rdo_style" checked="checked"/> Phone 1 <br/>
+    <input v-model="selectedRadio" value="1" type="radio" name="rdo_style"/> Phone 2 <br/>
+    <input v-model="selectedRadio" value="2" type="radio" name="rdo_style"/> Phone 3 <br/>
+    <span>value: {{selectedRadio}}</span>  
+    <br/><br/>
+    <div>Quantity: <input type="text" value="1"/></div>
+    <input type="button" value="Add to cart"/><br/> 
+    <div>Cart: 0</div>
+  </div>
+  
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          images: {
+            "https://images.pexels.com/photos/1294886/pexels-photo-1294886.jpeg":0,
+            "https://images.pexels.com/photos/1366998/pexels-photo-1366998.jpeg":1,
+            "https://images.pexels.com/photos/3510/hand-apple-iphone-smartphone.jpg":2
+          },
+          selectedRadio: 0, // default selected radio
+          // cart: 0, // default cart value
+        };
+      },
+      // methods: {
+      //   addToCart() {
+      //     this.cart += 1;
+      //   },
+      // },
+    });
+  </script>
+</body>
+</html>
+
+
+
+</body>
+</html>
